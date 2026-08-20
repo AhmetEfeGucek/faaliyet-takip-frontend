@@ -19,9 +19,10 @@ Bu proje, kurum/şirket içi etkinlik ve faaliyetlerin planlanması, katılım d
 
 ## 🚀 Kurulum ve Çalıştırma
 
-1. Depoyu klonlayın:
+Kurulum ve Çalıştırma Adımları:
+
 ```bash
-git clone https://github.com/AhmetEfeGucek/faaliyet-takip-frontend.git
+git clone [https://github.com/AhmetEfeGucek/faaliyet-takip-frontend.git](https://github.com/AhmetEfeGucek/faaliyet-takip-frontend.git)
 cd faaliyet-takip-frontend
 npm install
 npm start
