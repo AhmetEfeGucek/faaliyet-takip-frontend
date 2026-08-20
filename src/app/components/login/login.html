@@ -1,0 +1,48 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="card-header">
+      <h2>Faaliyet Takip Portalı</h2>
+      <p>Hesabınıza giriş yapın</p>
+    </div>
+
+    <!-- Hata Bildirim Kutusu -->
+    <div *ngIf="errorMessage" class="error-banner">
+      {{ errorMessage }}
+    </div>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="email">E-Posta Adresi</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="ornek@sirket.com"
+          required
+          class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Şifre</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="••••••••"
+          required
+          class="form-control" />
+      </div>
+
+      <button type="submit" [disabled]="isLoading" class="btn-submit">
+        {{ isLoading ? 'Giriş Yapılıyor...' : 'Giriş Yap' }}
+      </button>
+    </form>
+
+    <div class="card-footer">
+      <span>Hesabınız yok mu?</span>
+      <a routerLink="/register">Kayıt Ol</a>
+    </div>
+  </div>
+</div>

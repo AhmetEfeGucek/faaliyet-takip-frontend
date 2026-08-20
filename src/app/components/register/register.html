@@ -1,0 +1,65 @@
+<div class="register-container">
+  <div class="register-card">
+    <div class="card-header">
+      <h2>Kayıt Ol</h2>
+      <p>Yeni bir hesap oluşturun</p>
+    </div>
+
+    <!-- Başarı Mesajı -->
+    <div *ngIf="message" class="success-banner">
+      {{ message }}
+    </div>
+
+    <!-- Hata Mesajı -->
+    <div *ngIf="error" class="error-banner">
+      {{ error }}
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="fullName">Ad Soyad</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          [(ngModel)]="user.fullName"
+          placeholder="Adınız Soyadınız"
+          required
+          class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Posta</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          placeholder="ornek@sirket.com"
+          required
+          class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Şifre</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          placeholder="••••••••"
+          required
+          class="form-control" />
+      </div>
+
+      <button type="submit" [disabled]="isLoading" class="btn-submit">
+        {{ isLoading ? 'Kaydediliyor...' : 'Kayıt Ol' }}
+      </button>
+    </form>
+
+    <div class="card-footer">
+      <span>Zaten hesabınız var mı?</span>
+      <a routerLink="/login">Giriş Yap</a>
+    </div>
+  </div>
+</div>
